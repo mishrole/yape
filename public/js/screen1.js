@@ -1,9 +1,13 @@
 'use strict';
 
+$(document).ready(function(){
+      $('.carousel.carousel-slider').carousel({fullWidth: true});
+    });
+
+
 function Screen1(){
-	const container = $('<div class="container carousel-container"></div>');
-	const carousel = $('<div class="carousel"></div>');
-	const prueba = $('<div class="prueba"></div>');
+	const container = $('<div class="container"></div>');
+	const carousel = $('<div class="carousel carousel-slider"></div>');
 
 	const images = ['icon-people', 'happy-person', 'group-people'];
 /*	
@@ -14,13 +18,11 @@ function Screen1(){
 
 	for(var i = 0; i < images.length; i++){
 
-		const imagesContainer = $('<div class="images-container"></div>').append($('<img class="carousel-image" src="img/icons/' + images[i] + '.png">'))
+		const imagesContainer = $('<a class="carousel-item" href="#"></a>').append($('<img class="carousel-image" src="img/icons/' + images[i] + '.png">'))
 		carousel.append(imagesContainer);
 	}
 
 	container.append(carousel);
-	container.append(prueba);
-
 	return container
 }
 /*
