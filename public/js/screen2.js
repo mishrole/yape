@@ -47,7 +47,17 @@ function Screen2(){
 		}else{
 			next.attr('disabled', true);
 		}
+	})
 
+	labelCheckbox.on('click', (e) => {
+
+		const dataInput = input.val();
+
+		if((checkbox).prop('checked') == false && dataInput.length == 9){
+			next.attr('disabled', false);
+		}else{
+			next.attr('disabled', true);
+		}
 	})
 /*
 		labelCheckbox.on('click', (e) => {
