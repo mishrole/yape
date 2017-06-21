@@ -66,6 +66,20 @@ p{
 	margin: 5px;
 }
 
-.phoneandnumber{
+img.phoneandnumber{
 	width: 60px;
+}
+
+a.waves-effect.waves-light.btn.next{
+	width: 50%;
+}
+
+.container{
+	transform: translateY(15%);
+}
+
+.continue{
+	position: absolute;
+	width: 100%;
+	top: 25em;
 }
