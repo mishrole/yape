@@ -11,6 +11,7 @@
 
 .bolder{
 	font-weight: bolder;
+	color: black;
 }
 
 .carousel.carousel-slider.center.initialized{
@@ -49,7 +50,7 @@ a.waves-effect.waves-light.btn{
 	background-color: #fbd43b;
 }
 
-img.screen2-phone{
+img.small-image{
 	width: 100px;
 }
 
@@ -75,7 +76,7 @@ a.waves-effect.waves-light.btn.next{
 }
 
 .container{
-	transform: translateY(15%);
+	transform: translateY(15%);                                                                                                                                                       
 }
 
 .continue{

@@ -1,10 +1,10 @@
 'use strict';
 
-function Screen2(){
+function Screen2(update){
 	const container = $('<div class="container center"></div>');
 	const row = $('<div class="row"></div>');
 	const imgContainer = $('<div class="col s12"></div>');
-	const img = $('<img class="screen2-phone" src="img/icons/phone.png">');
+	const img = $('<img class="small-image" src="img/icons/phone.png">');
 	const textContainer = $('<div class="col s12"></div>');
 	const title = $('<p class="title2 bolder">Para comenzar validemos tu número</p>');
 	const subtitle = $('<p class="subtitle2 grey-text">Recibirás un SMS con un código de validación</p>');
@@ -34,7 +34,7 @@ function Screen2(){
 	container.append(row2);
 	container.append(row3);
 
-	input.on('keyup', (e) => {
+	input.on('keyup', () => {
 
 		const dataInput = input.val();
 
@@ -49,7 +49,7 @@ function Screen2(){
 		}
 	})
 
-	labelCheckbox.on('click', (e) => {
+	labelCheckbox.on('click', () => {
 
 		const dataInput = input.val();
 
@@ -59,6 +59,33 @@ function Screen2(){
 			next.attr('disabled', true);
 		}
 	})
+
+	next.on('click', () => {
+
+		const phone = input.val();
+
+		$.post('api/registerNumber',
+		{
+			"phone": phone,
+			"terms": true
+		}, (data) => {
+
+		state.data = data
+		state.user = data.data.phone
+		state.code = data.data.code
+
+		if(data.success == false){
+			console.log(data.message)
+		}else{
+			console.log(data.message + "\n" + "Phone: " + data.data.phone + "\n" + "Code: " + data.data.code);
+			state.screen = "screen3"
+			update();
+		}
+
+		});
+	})
+
+
 /*
 		labelCheckbox.on('click', (e) => {
 			if((checkbox).prop('checked')){

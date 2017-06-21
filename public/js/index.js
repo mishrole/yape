@@ -10,17 +10,28 @@ const render = (root) => {
 
 //	wrapper.append(Screen1(update));
 
+//Optimizar y limpiar esto (urgente)
+
 	if(state.screen == null){
 		wrapper.append(Screen1(update));
-	}else{
-		wrapper.append(Screen2());
+	}else if(state.screen == "screen2"){
+		wrapper.append(Screen2(update));
+	}else if(state.screen == "screen3"){
+		wrapper.append(Screen3(update));
+	}else if(state.screen == "screen4"){
+		wrapper.append(Screen4(update));
+	}else if(state.screen == "screen5"){
+		wrapper.append(Screen5(update));
 	}
 
 	root.append(wrapper);
 }
 
 const state = {
-	screen: null
+	screen: null,
+	data: null,
+	user: null,
+	code: null,
 }
 
 $(_=> {

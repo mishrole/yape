@@ -24,7 +24,7 @@ function Screen1(update){
 	}
 
 	register.on('click', (e) => {
-		state.screen = register
+		state.screen = "screen2"
 		update();
 	})
 
