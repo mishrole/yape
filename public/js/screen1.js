@@ -5,7 +5,7 @@ $(document).ready(_=>{
 });
 
 function Screen1(update){
-	const container = $('<div class="container"></div>');
+	const container = $('<div class="container-screen1"></div>');
 	const carousel = $('<div class="carousel carousel-slider center" data-indicators="true"></div>');
 	const images = ['icon-people', 'happy-person', 'group-people'];
 	const allTitles = ['Paga a tus amigos', 'Sin número de cuenta', 'Gratis y seguro'];
@@ -16,8 +16,8 @@ function Screen1(update){
 	for(var i = 0; i < images.length; i++){
 
 		const imagesContainer = $('<div class="carousel-item" href=" "></div>').append($('<img class="carousel-image '+images[i]+'" src="img/icons/' + images[i] + '.png">'))
-		const title = $('<p class="title"></p>').append(allTitles[i]);
-		const subtitle = $('<p class="subtitle"></p>').append(allSubtitles[i]);
+		const title = $('<p class="title bolder"></p>').append(allTitles[i]);
+		const subtitle = $('<p class="subtitle grey-text"></p>').append(allSubtitles[i]);
 		imagesContainer.append(title);
 		imagesContainer.append(subtitle);
 		carousel.append(imagesContainer);

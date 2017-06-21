@@ -1,11 +1,16 @@
-.container{
+.container-screen1{
 	width: 75%;
+	margin: 0 auto;
+	max-width: 1280px;
 }
 
 .title{
 	font-size: 1.7em !important;
-	font-weight: bolder;
 	margin: 10px;
+}
+
+.bolder{
+	font-weight: bolder;
 }
 
 .carousel.carousel-slider.center.initialized{
@@ -42,4 +47,25 @@ a.waves-effect.waves-light.btn{
 .btn:hover,
 .btn-large:hover {
 	background-color: #fbd43b;
+}
+
+img.screen2-phone{
+	width: 100px;
+}
+
+p{
+	margin: 0;
+}
+
+.title2{
+	font-size: 1.4em;
+}
+
+.subtitle2{
+	font-size: 1em;
+	margin: 5px;
+}
+
+.phoneandnumber{
+	width: 60px;
 }
