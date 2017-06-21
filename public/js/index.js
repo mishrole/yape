@@ -2,7 +2,25 @@
 
 const render = (root) => {
 	root.empty();
-	root.append(Screen1());
+	const wrapper = $('<div class="wrapper"></div>');
+
+	const update = function(){
+		render(root);
+	}
+
+//	wrapper.append(Screen1(update));
+
+	if(state.screen == null){
+		wrapper.append(Screen1(update));
+	}else{
+		wrapper.append(Screen2());
+	}
+
+	root.append(wrapper);
+}
+
+const state = {
+	screen: null
 }
 
 $(_=> {

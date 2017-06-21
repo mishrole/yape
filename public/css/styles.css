@@ -1,3 +1,45 @@
+.container{
+	width: 75%;
+}
+
 .title{
-	font-size: 1.7em;
+	font-size: 1.7em !important;
+	font-weight: bolder;
+	margin: 10px;
+}
+
+.carousel.carousel-slider.center.initialized{
+	height: 75vh !important;
+	transform: translateY(10%);
+}
+
+.carousel .carousel-item > img{
+	width: 85%;
+}
+
+.carousel .indicators .indicator-item{
+	background-color: gray;
+}
+
+.carousel .indicators .indicator-item.active{
+	background-color: #f64552;
+}
+
+.carousel .indicators{
+	bottom: 85px;
+}
+
+.carousel.carousel-slider .carousel-fixed-item.with-indicators{
+	bottom: 50px;
+}
+
+a.waves-effect.waves-light.btn{
+	width: 85%;
+}
+
+.btn,
+.btn-large,
+.btn:hover,
+.btn-large:hover {
+	background-color: #fbd43b;
 }
