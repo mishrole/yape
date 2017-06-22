@@ -36,7 +36,7 @@ function Screen3(update, clear){
 
 	function countdown(span){
 		const phone = state.user
-		let counter = 10;
+		let counter = 22;
 		interval = setInterval(function() {
 			counter--;
 			if (counter >= 0) {
@@ -68,7 +68,7 @@ function Screen3(update, clear){
 		const dataInput = input.val();
 
 		if(dataInput == state.code){
-			state.screen = "Screen 4"
+			state.screen = "screen4"
 			update();
 			clear();
 		}
