@@ -1,29 +1,6 @@
 'use strict';
 
-function countdown(span){
-	const phone = state.user
-	let counter = 22;
-	let interval = setInterval(function() {
-		counter--;
-		if (counter >= 0) {
-			span.text(' ' + counter);
-		}
-
-		if (counter === 0) {
-			$.post('api/resendCode',
-			{
-				"phone": phone,
-			}, (data) => {
-				state.code = data.data
-				console.log(state.code)
-			});
-
-			countdown(span);
-		}
-	}, 1000);
-}
-
-function Screen3(update, interval){
+function Screen3(update, clear){
 	const container = $('<div class="container center"></div>');
 	const row = $('<div class="row"></div>');
 	const imgContainer = $('<div class="col s12"></div>');
@@ -55,16 +32,45 @@ function Screen3(update, interval){
 	container.append(row2);
 	container.append(row3);
 
+	let interval;
+
+	function countdown(span){
+		const phone = state.user
+		let counter = 10;
+		interval = setInterval(function() {
+			counter--;
+			if (counter >= 0) {
+				span.text(' ' + counter);
+			}
+
+			if (counter === 0) {
+				$.post('api/resendCode',
+				{
+					"phone": phone,
+				}, (data) => {
+					state.code = data.data
+					console.log(state.code)
+				});
+
+				countdown(span);
+			}
+		}, 1000);
+	}
+
+	function clear(){
+		clearInterval(interval);
+	}
+
 	countdown(span);
 
-	input.on('keyup', (interval) => {
+	input.on('keyup', () => {
 
 		const dataInput = input.val();
 
 		if(dataInput == state.code){
 			state.screen = "Screen 4"
 			update();
-			clearInterval(interval)
+			clear();
 		}
 	})
 
